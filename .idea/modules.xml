@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ANDROID_SHELL_3.iml" filepath="$PROJECT_DIR$/ANDROID_SHELL_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/browseMediafileslibrary/browseMediafileslibrary.iml" filepath="$PROJECT_DIR$/browseMediafileslibrary/browseMediafileslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listswipemenudemo/listswipemenudemo.iml" filepath="$PROJECT_DIR$/listswipemenudemo/listswipemenudemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickmediafile/pickmediafile.iml" filepath="$PROJECT_DIR$/pickmediafile/pickmediafile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidedeleteitem/slidedeleteitem.iml" filepath="$PROJECT_DIR$/slidedeleteitem/slidedeleteitem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>

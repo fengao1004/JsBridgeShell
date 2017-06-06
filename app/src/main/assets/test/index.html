@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title></title>
+    <style type="text/css">
+			.mui-btn {
+				line-height: 1;
+			}
+
+			.mui-content {
+				background-color: #efeff4;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			.mui-btn-block {
+				border-radius: 8px;
+				font-size: 18px;
+				display: block;
+				width: 100%;
+				margin-bottom: 10px;
+				padding: 15px 0;
+			}
+
+			.mui-bar-nav~ .mui-content {
+				padding-top: 44px;
+			}
+
+			.mui-btn-green,
+			.mui-btn-positive,
+			.mui-btn-success {
+				color: #fff;
+				border: 1px solid #4cd964;
+				background-color: #4cd964;
+			}
+			.mui-btn-testing {
+				color: #fff;
+				border: 1px solid #14b3f3;
+				background-color: #14b3f3;
+			}
+			.mui-btn-tested {
+				color: #fff;
+				border: 1px solid #3F51B5;
+				background-color: #3F51B5;
+			}
+			.mui-bar .mui-title {
+				right: 40px;
+				left: 40px;
+				display: inline-block;
+				overflow: hidden;
+				width: auto;
+				margin: 0;
+				text-overflow: ellipsis;
+			}
+
+			.mui-title {
+				font-size: 17px;
+				font-weight: 500;
+				line-height: 44px;
+				position: absolute;
+				display: block;
+				width: 100%;
+				margin: -10px;
+				padding: 0;
+				text-align: center;
+				white-space: nowrap;
+				color: #000;
+			}
+
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">H5plusShell</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="saveKVData()">
+            存储key
+        </button>
+
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="getKVData()">
+            取出key
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="delKVData()">
+            删除key
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="selectFiles()">
+            选择文件
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="doMedia()">拍照
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="startUpdateLocation()">开启定位
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="getLocations()">
+            获得位置信息
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="stopUpdateLocation()">停止定位
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="dialNumberUrl()">
+            打电话
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="sendMessageUrl()">发短信
+        </button>
+        <button type="button" class="mui-btn mui-btn-green mui-btn-block"
+                onclick="uploadFilesHttp()">http上传
+        </button>
+        <button type="button" class="mui-btn mui-btn-green mui-btn-block"
+                onclick="uploadFilesFtp()">ftp上传
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="setUserProfile1()">选择头像
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="setUserProfile2()">拍摄头像
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="doMedia1()">拍摄视频
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="doMedia2()">录音
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="videoPreviewEdit()">剪辑视频
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="browseMedia()">
+            展示文件 
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="querySkip()">
+            查询跳转
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="setWebview()">
+            设置index webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="exit()">退出
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="updatePortal()">
+            更新portal
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="getLoginPath()">
+            获取login路径
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="listMeeting()">
+            进入连线列表
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="createWebview()">创建新窗口
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="showWebview()">
+            展示webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="closeWebview()">关闭webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="evalJS()">
+            执行js
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="getAllWebview()">获取所有webview的id数组
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="getWebviewById()">根据id获取webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="getWebviewId()">获取webview Id
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="showWaiting()">
+            显示等待框
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="removeWaiting()">移除等待框
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="webviewGoTop()">webview上升至栈顶
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="setWebviewInvisible()">隐藏webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="setWebviewVisible()">显示webview
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block"
+                onclick="overWriteAndroidBackKey()">重写Android返回键
+        </button>
+        <button type="button" class="mui-btn mui-btn-tested mui-btn-block" onclick="clearWebviews()">
+            清除所有webview
+        </button>
+    </div>
+</div>
+</body>
+<script src="shell.js"></script>
+<script>
+		document.addEventListener(
+			'WebViewJavascriptBridgeReady',
+			function() {
+				WebViewJavascriptBridge.init();
+			},
+			false
+		);
+
+		function saveKVData() {
+			var data = {
+				"key": "test",
+				"value": "demo"
+			};
+			shell.saveKVData(data,function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getKVData() {
+			var data = {
+				"key": "test"
+			};
+			shell.getKVData(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function delKVData() {
+			var data = {
+				"key": "test"
+			};
+			shell.delKVData(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function selectFiles() {
+			var data = {
+				"allowSelectNum": 9
+			};
+			shell.selectFiles(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function doMedia() {
+			var data = {
+				"actionName": "takePhoto"
+			};
+			shell.doMedia(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function checkUpdate() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.checkUpdate(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function startUpdateLocation() {
+			var data = {
+				"userId": "0003",
+				"username": "0003",
+				"locationURL": "fghjk"
+			};
+			shell.startUpdateLocation(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getLocations() {
+			var data = {};
+			shell.getLocations(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function stopUpdateLocation() {
+			var data = "";
+			shell.stopUpdateLocation(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function dialNumberUrl() {
+			var data = {
+				"phoneNumber": "15175535916"
+			};
+			shell.dialNumberUrl(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function sendMessageUrl() {
+			var data = {
+				"phoneNumber": "123456789"
+			};
+			shell.sendMessageUrl(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function uploadFilesHttp() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.uploadFiles(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function uploadFilesFtp() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.uploadFiles(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function setUserProfile1() {
+			var data = {
+				"actionName": "pickMediaFile"
+			};
+			shell.setUserProfile(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function setUserProfile2() {
+			var data = {
+				"actionName": "takePhoto"
+			};
+			shell.setUserProfile(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function doMedia1() {
+			var data = {
+				"actionName": "recordVideo"
+			};
+			shell.doMedia(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function doMedia2() {
+			var data = {
+				"actionName": "recordAudio"
+			};
+			shell.doMedia(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function videoPreviewEdit() {
+			var data = {
+                  "filePath": "/storage/emulated/0/videos/20170329153000.mp4",
+                  "indexNO": 2
+            };
+			shell.videoPreviewEdit(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function browseMedia() {
+			var data = {
+            "fileInfo": {
+                "fileType": 0,
+                "filePath": "/storage/emulated/0/images/20170329152333.jpg"
+                }
+			};
+			shell.playMedia(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function querySkip() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.querySkip(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function setWebview() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.setWebview(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function exit() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.exit(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function updatePortal() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.updatePortal(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getLoginPath() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.getLoginPath(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function listMeeting() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.listMeeting(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function createWebview() {
+			var data = {
+				"id": "newWeb",
+				"url": "http://www.baidu.com"
+			}
+			shell.createWindow(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function showWebview() {
+			var data = {
+				"id": "newWeb",
+			};
+			shell.showWindow(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function closeWebview() {
+			var data = {
+				"id": "newWeb",
+			};
+			shell.closeWindow(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function evalJS() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.evalJS(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getAllWebview() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.getAllWebview(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getWebviewById() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.getWebviewById(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function getWebviewId() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.getWebviewId(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function showWaiting() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.showWaiting(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function removeWaiting() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.removeWaiting(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function webviewGoTop() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.webviewGoTop(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function setWebviewInvisible() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.setWebviewInvisible(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function setWebviewVisible() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.setWebviewVisible(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+	    function overWriteAndroidBackKey() {
+			var data = {
+				"id": "launcherView",
+				"js": "alert(1111)"
+			};
+			shell.overWriteAndroidBackKey(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+		function clearWebviews() {
+			var data = {
+				"key": "test",
+				"value": "fengao"
+			};
+			shell.clearWebviews(data, function(cb) {
+				alert(cb);
+			});
+		}
+
+</script>
+
+</html>

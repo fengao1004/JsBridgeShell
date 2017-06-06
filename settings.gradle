@@ -1,0 +1,1 @@
+include ':app', ':pickmediafile', ':test', ':browseMediafileslibrary', ':slidedeleteitem', ':listswipemenudemo'

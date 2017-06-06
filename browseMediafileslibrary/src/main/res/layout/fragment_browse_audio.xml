@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_port"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#D1C9D1"
+    android:padding="1dip">
+
+    <RelativeLayout
+        android:id="@+id/iv_palyaudio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/audio_background">
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="5pt"
+            android:layout_marginTop="120sp"
+            android:gravity="center_vertical"
+            android:src="@drawable/recordimage" />
+
+        <Chronometer
+            android:id="@+id/window_chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="350sp"
+            android:format=""
+            android:textColor="#3d3c3c"
+            android:textSize="100px" />
+
+        <TextView
+            android:id="@+id/window_alltimelen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="420sp"
+            android:text="00:00"
+            android:textColor="#3d3c3c"
+            android:textSize="60px" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25sp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/window_playaudio"
+                    android:layout_width="100sp"
+                    android:layout_height="80sp"
+                    android:background="@drawable/window_play" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="35sp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/window_stopaudio"
+                    android:layout_width="100sp"
+                    android:layout_height="80sp"
+                    android:background="@drawable/stop" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_audio_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_shade" />
+
+        <ProgressBar
+            android:id="@+id/pb_audio_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pb_audio_loading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-25dp"
+            android:text="缓冲中请稍等"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</RelativeLayout>
